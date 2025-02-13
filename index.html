@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: black;
+        }
+        h1 {
+            font-size: 1.5em;
+            color: white;
+        }
+        #counter {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Term Week</h1>
+    <div id="counter">1</div>
+    
+    <script>
+        function calculateWeek() {
+            let startDate = new Date("2025-02-08"); // Start of the term (Saturday, Feb 8, 2025)
+            let today = new Date();
+            let timeDiff = today - startDate;
+            let weekNumber = Math.floor(timeDiff / (7 * 24 * 60 * 60 * 1000)) + 1;
+            
+            document.getElementById("counter").textContent = weekNumber > 0 ? weekNumber : 1;
+        }
+        
+        calculateWeek();
+    </script>
+</body>
+</html>
